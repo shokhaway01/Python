@@ -16,7 +16,7 @@ def sontop_user(x = 10):
 
     print(f"Вы угадли моё число с {taxminlar} раза")
     return taxminlar
-#sontop_user(10)
+
 
 def sontop_pc(x = 10):
     input(f"Загадайте число от 1 до {x} и нажмите на Enter . \nЯ отгадаю\n--->")
@@ -42,4 +42,19 @@ def sontop_pc(x = 10):
     print(f"Ура я отгадал ваше число с {taxminlar} попытки!")
     return taxminlar
 
-sontop_pc(10)
+def play(x=10):
+    yana = True
+    while yana:
+        taxminlar_pc = sontop_pc(x)
+        taxminlar_user = sontop_user(x)
+
+        if taxminlar_user > taxminlar_pc:
+            print(f"Men {taxminlar_pc} taxmin bilan topdim va  yutdim!")
+        elif taxminlar_user < taxminlar_pc:
+            print(f"Siz {taxminlar_user} taxmin bilan topdingiz va yutdingiz!")
+        else:
+            print("Durrang!")
+        yana = int(input("Yana o'ynaymizmi? Ha(1)/Yo'q(0):"))
+
+
+play()
